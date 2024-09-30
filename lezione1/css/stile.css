@@ -1,0 +1,60 @@
+/* Impostiamo un layout a due colonne con Flexbox */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Disporre gli elementi dall'alto verso il basso */
+    height: 100vh; /* Riempire tutta l'altezza della finestra */
+}
+
+/* Stile per l'intestazione */
+.Intestazione {
+    background-color: #41b244; /* Colore di sfondo verde */
+    color: white; /* Colore del testo bianco */
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    flex-shrink: 0; /* Mantiene la dimensione dell'intestazione fissa */
+}
+
+/* Contenitore principale che contiene il menù verticale e il contenuto */
+.main-container {
+    display: flex;
+    flex: 1; /* Occupa tutto lo spazio rimanente */
+}
+
+/* Stile per il menù verticale */
+.vertical-nav {
+    width: 200px; /* Larghezza del menù */
+    background-color: #275528; /* Sfondo scuro per il menù */
+    padding: 20px;
+    height: calc(100vh - 80px); /* Altezza meno l'altezza dell'intestazione */
+    box-sizing: border-box;
+}
+
+/* Stile per i link nel menù */
+.vertical-nav a {
+    display: block;
+    color: white; /* Colore del testo */
+    padding: 15px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Cambia colore al passaggio del mouse */
+.vertical-nav a:hover {
+    background-color: #41b244;
+    
+}
+
+/* Stile per il contenitore del contenuto */
+.content {
+    flex: 1; /* Riempie tutto lo spazio rimanente accanto alla navbar */
+    background-color: #9be09e; /* Sfondo chiaro per il contenuto */
+    padding: 20px;
+    box-sizing: border-box;
+    height: calc(100vh - 80px); /* Altezza meno l'intestazione */
+    overflow-y: auto; /* Aggiungere uno scroll verticale se il contenuto è troppo lungo */
+    
+}
