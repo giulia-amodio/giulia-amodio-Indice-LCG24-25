@@ -1,36 +1,33 @@
 
-//variabili per cambiare la grandezza del canva
-let xsize = 600;
-let ysize = 400;
-
-
 function setup() {
+  //creates a canvas 600 pixels wide
+  //and 400 pixels high
   createCanvas(600, 400);
 }
-
 function draw() {
   background("darkblue");
+  fill("white")
+  stroke("yellow")
+  strokeWeight(10); //large outline
+circle(550, 50, 100)
+  stroke(0);//black outline
+  strokeWeight(1);//outline thickness
+  fill("green");
+  let y = 200;
+  rect(0, y, 600, 200);
+  stroke(0);//black outline
+  strokeWeight(1);//outline thickness
 
-  fill ("green")
-  stroke ("black")
-  strokeWeight (2);
-  rect (0, 200, 600, 1000);
-
-  strokeWeight (5);
-  stroke ("white");
-  fill ("yellow");
-  circle (600, 0, 200)
+  //fagli prima senza for loop e poi col loop
+  let x_casa =0;
+  for(let numero_case=0; numero_case<5; numero_case++){
+    fill("white");
+    let house_height = 100
+    rect(x_casa, y-house_height , 100, house_height);
+    fill("red");
+    triangle(x_casa,y-house_height, 50+x_casa, 15, 100+x_casa, 102);
+    x_casa += 150
+  }
 
   
-  fill ("white")
-  strokeWeight (2)
-  stroke ("black")
-  rect (0,100, 100, 100)
-
-  strokeWeight (2)
-  stroke ("black")
-  fill ("red")
-  triangle (0, 100, 50, 30, 100, 100)
-
-
 }
