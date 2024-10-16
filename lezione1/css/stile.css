@@ -1,60 +1,106 @@
-/* Impostiamo un layout a due colonne con Flexbox */
+/* Impostiamo il layout a due colonne con Flexbox */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column; /* Disporre gli elementi dall'alto verso il basso */
-    height: 100vh; /* Riempire tutta l'altezza della finestra */
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
 }
 
 /* Stile per l'intestazione */
 .Intestazione {
-    background-color: #41b244; /* Colore di sfondo verde */
-    color: white; /* Colore del testo bianco */
+    background-color: #2c6e3b;
+    color: white;
     padding: 20px;
     text-align: center;
     font-size: 2em;
-    font-family: Arial, sans-serif;
-    flex-shrink: 0; /* Mantiene la dimensione dell'intestazione fissa */
+    flex-shrink: 0;
 }
 
 /* Contenitore principale che contiene il menù verticale e il contenuto */
 .main-container {
     display: flex;
-    flex: 1; /* Occupa tutto lo spazio rimanente */
+    flex: 1;
+    background-color: #f9f9f9;
 }
 
 /* Stile per il menù verticale */
 .vertical-nav {
-    width: 200px; /* Larghezza del menù */
-    background-color: #275528; /* Sfondo scuro per il menù */
+    width: 220px;
+    background-color: #2c6e3b;
     padding: 20px;
-    height: calc(100vh - 80px); /* Altezza meno l'altezza dell'intestazione */
     box-sizing: border-box;
 }
 
 /* Stile per i link nel menù */
 .vertical-nav a {
     display: block;
-    color: white; /* Colore del testo */
+    color: white;
     padding: 15px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 /* Cambia colore al passaggio del mouse */
 .vertical-nav a:hover {
     background-color: #41b244;
-    
 }
 
 /* Stile per il contenitore del contenuto */
 .content {
-    flex: 1; /* Riempie tutto lo spazio rimanente accanto alla navbar */
-    background-color: #9be09e; /* Sfondo chiaro per il contenuto */
+    flex: 1;
+    background-color: #ffffff;
     padding: 20px;
     box-sizing: border-box;
-    height: calc(100vh - 80px); /* Altezza meno l'intestazione */
-    overflow-y: auto; /* Aggiungere uno scroll verticale se il contenuto è troppo lungo */
-    
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* Stile per la lista degli argomenti */
+.content ul {
+    list-style-type: none; /* Rimuove i bullet points */
+    padding: 0;
+}
+
+.content li {
+    margin-bottom: 15px; /* Spazio tra gli elementi della lista */
+}
+
+/* Stile per i link all'interno del contenuto */
+.content a {
+    color: #2c6e3b;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.content a:hover {
+    color: #41b244;
+    border-bottom: 2px solid #41b244; /* Aggiunge una linea sotto il link quando si passa con il mouse */
+}
+
+/* Aggiungi qualche stile mobile-friendly */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .vertical-nav {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    .vertical-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 10px 5px;
+        margin-bottom: 0;
+    }
 }
